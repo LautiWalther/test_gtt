@@ -1,0 +1,35 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    logging: 
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
+  frontend:
+    build: ./frontend
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    logging: 
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
+  
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    logging: 
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
+
+volumes:
+  mongodb_data:
