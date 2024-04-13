@@ -8,8 +8,7 @@ import cors from 'cors';
 const app = express();
 const port = 3001;
 
-//mongoose.connect('mongodb://192.168.100.54:27017/gtt_test')
-mongoose.connect('mongodb://127.0.0.1:27017/gtt_test')
+mongoose.connect('mongodb://mongodb:27017/gtt_test')
 .then(() => console.log('Conexión a MongoDB establecida'))
 .catch(error => console.error('Error al conectar a MongoDB:', error));
 
