@@ -32,15 +32,15 @@ const ObjectEditForm: React.FC<ObjetoEditFormProps> = ({ objeto, onSave, onCance
             <div className="row">
                 <div className="input-field col s4">
                     <span>Nombre</span>
-                    <input type="text" name="nombre" value={editedObject.nombre} onChange={handleChange} />
+                    <input type="text" name="nombre" value={editedObject.nombre} onChange={handleChange} required />
                 </div>
                 <div className="input-field col s4">
                     <span>Descripción</span>
-                    <input type="text" name="descripcion" value={editedObject.descripcion} onChange={handleChange} />
+                    <input type="text" name="descripcion" value={editedObject.descripcion} onChange={handleChange} required />
                 </div>
                 <div className="input-field col s4">
                     <span>Precio</span>
-                    <input type="number" name="precio" value={editedObject.precio} onChange={handleChange} />
+                    <input type="number" name="precio" value={editedObject.precio} onChange={handleChange} required />
                 </div>
             </div>
             <div className="row">
